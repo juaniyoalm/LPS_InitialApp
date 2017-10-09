@@ -68,6 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonReset" destination="FYC-9e-Fyf" id="4nb-s4-Tlg"/>
+                        <outlet property="controlEvaluacion" destination="dcI-QL-4nK" id="6WK-7S-8q6"/>
                         <outlet property="imgView" destination="Edx-Su-CKu" id="hiQ-ue-fdf"/>
                         <outlet property="nombreLbl" destination="7sn-j8-j8g" id="H2P-Oe-Kwj"/>
                         <outlet property="nombreTxt" destination="eac-rZ-0wE" id="E5W-ZV-hNY"/>

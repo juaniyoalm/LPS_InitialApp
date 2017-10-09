@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B46BB0611F8BDF8700FA14CE /* Amigo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46BB0601F8BDF8700FA14CE /* Amigo.swift */; };
 		B4C72C521F83AB8A00997826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C72C511F83AB8A00997826 /* AppDelegate.swift */; };
 		B4C72C541F83AB8A00997826 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C72C531F83AB8A00997826 /* ViewController.swift */; };
 		B4C72C571F83AB8A00997826 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C72C551F83AB8A00997826 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B46BB0601F8BDF8700FA14CE /* Amigo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amigo.swift; sourceTree = "<group>"; };
 		B4C72C4E1F83AB8A00997826 /* secondApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = secondApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C72C511F83AB8A00997826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4C72C531F83AB8A00997826 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				B4C72C531F83AB8A00997826 /* ViewController.swift */,
 				B4C72C551F83AB8A00997826 /* Main.storyboard */,
 				B4D32D291F8BBF7E00840D94 /* EvaluationControl.swift */,
+				B46BB0601F8BDF8700FA14CE /* Amigo.swift */,
 				B4C72C581F83AB8A00997826 /* Assets.xcassets */,
 				B4C72C5A1F83AB8A00997826 /* LaunchScreen.storyboard */,
 				B4C72C5D1F83AB8A00997826 /* Info.plist */,
@@ -203,6 +206,7 @@
 				B4C72C541F83AB8A00997826 /* ViewController.swift in Sources */,
 				B4C72C521F83AB8A00997826 /* AppDelegate.swift in Sources */,
 				B4D32D2A1F8BBF7E00840D94 /* EvaluationControl.swift in Sources */,
+				B46BB0611F8BDF8700FA14CE /* Amigo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
