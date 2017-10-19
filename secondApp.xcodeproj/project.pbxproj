@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B443128D1F98267D00C60F6C /* EvaluationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B443128C1F98267D00C60F6C /* EvaluationControl.swift */; };
 		B45C838A1F9502D300361ED1 /* AmigoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C83891F9502D300361ED1 /* AmigoTableViewCell.swift */; };
 		B45C838C1F95096C00361ED1 /* AmigoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C838B1F95096C00361ED1 /* AmigoTableViewController.swift */; };
 		B46BB0611F8BDF8700FA14CE /* Amigo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46BB0601F8BDF8700FA14CE /* Amigo.swift */; };
@@ -16,7 +17,6 @@
 		B4C72C591F83AB8A00997826 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4C72C581F83AB8A00997826 /* Assets.xcassets */; };
 		B4C72C5C1F83AB8A00997826 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C72C5A1F83AB8A00997826 /* LaunchScreen.storyboard */; };
 		B4C72C671F83AB8A00997826 /* secondAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C72C661F83AB8A00997826 /* secondAppTests.swift */; };
-		B4D32D2A1F8BBF7E00840D94 /* EvaluationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D32D291F8BBF7E00840D94 /* EvaluationControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B443128C1F98267D00C60F6C /* EvaluationControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationControl.swift; sourceTree = "<group>"; };
 		B45C83891F9502D300361ED1 /* AmigoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoTableViewCell.swift; sourceTree = "<group>"; };
 		B45C838B1F95096C00361ED1 /* AmigoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmigoTableViewController.swift; sourceTree = "<group>"; };
 		B46BB0601F8BDF8700FA14CE /* Amigo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amigo.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		B4C72C621F83AB8A00997826 /* secondAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = secondAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C72C661F83AB8A00997826 /* secondAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondAppTests.swift; sourceTree = "<group>"; };
 		B4C72C681F83AB8A00997826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4D32D291F8BBF7E00840D94 /* EvaluationControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EvaluationControl.swift; path = ../../secondApp/EvaluationControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,8 @@
 				B4C72C531F83AB8A00997826 /* AmigoViewController.swift */,
 				B4C72C551F83AB8A00997826 /* Main.storyboard */,
 				B45C838B1F95096C00361ED1 /* AmigoTableViewController.swift */,
+				B443128C1F98267D00C60F6C /* EvaluationControl.swift */,
 				B45C83891F9502D300361ED1 /* AmigoTableViewCell.swift */,
-				B4D32D291F8BBF7E00840D94 /* EvaluationControl.swift */,
 				B46BB0601F8BDF8700FA14CE /* Amigo.swift */,
 				B4C72C581F83AB8A00997826 /* Assets.xcassets */,
 				B4C72C5A1F83AB8A00997826 /* LaunchScreen.storyboard */,
@@ -213,8 +213,8 @@
 				B45C838C1F95096C00361ED1 /* AmigoTableViewController.swift in Sources */,
 				B45C838A1F9502D300361ED1 /* AmigoTableViewCell.swift in Sources */,
 				B4C72C521F83AB8A00997826 /* AppDelegate.swift in Sources */,
-				B4D32D2A1F8BBF7E00840D94 /* EvaluationControl.swift in Sources */,
 				B46BB0611F8BDF8700FA14CE /* Amigo.swift in Sources */,
+				B443128D1F98267D00C60F6C /* EvaluationControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
