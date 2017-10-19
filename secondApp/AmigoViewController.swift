@@ -8,14 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // MARK: Atributo
+    var amigo: Amigo?
     
     // MARK: Properties
-    @IBOutlet weak var nombreLbl: UILabel!
+    //@IBOutlet weak var nombreLbl: UILabel!
     @IBOutlet weak var nombreTxt: UITextField!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var controlEvaluacion: EvaluationControl!
     
+    @IBOutlet weak var saveBtn: UIBarButtonItem!
+   
+    /*
     @IBOutlet weak var buttonReset: UIButton!
        override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,21 +31,21 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         buttonReset.layer.cornerRadius = 6
         imgView.layer.cornerRadius = 10
     }
+ */
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Navegacion
     
-    
-    // MARK: Actions
-    @IBAction func setResetBtn(sender: UIButton) {
-        nombreLbl.text = "Hola desconocido"
-        nombreTxt.text = ""
-        imgView.image = UIImage(named: ("Imagen predeterminada"))
-        controlEvaluacion.gradoAfinidad = 0
+    @IBAction func cancelar(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
+
+    // MARK: Actions
     
     @IBAction func seleccionarImagen(sender: UITapGestureRecognizer) {
         nombreTxt.resignFirstResponder()
@@ -57,9 +63,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         return true
     }
     
+    /*
     func textFieldDidEndEditing(textField: UITextField) {
         nombreLbl.text = "Hola " + textField.text!
     }
+ */
     
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) { dismissViewControllerAnimated(true, completion: nil)
@@ -71,6 +79,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imgView.image = selectedImage
         imgView.layer.masksToBounds = true
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (sender !== saveBtn) {return}
+        amigo = Amigo(nombre: nombreTxt.text ?? "",
+                      foto: imgView.image,
+                      gAfinidad: controlEvaluacion.gradoAfinidad)
     }
 
 
