@@ -21,17 +21,15 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     
     @IBOutlet weak var saveBtn: UIBarButtonItem!
    
-    /*
-    @IBOutlet weak var buttonReset: UIButton!
+    
        override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        nombreTxt.delegate = self
-        buttonReset.layer.cornerRadius = 6
-        imgView.layer.cornerRadius = 10
+        nombreTxt.delegate = self;
+        saveBtn.enabled = false
+        nombreTxt.addTarget(self, action: #selector(self.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
     }
- */
+ 
     
 
     override func didReceiveMemoryWarning() {
@@ -63,12 +61,14 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         return true
     }
     
-    /*
+   
     func textFieldDidEndEditing(textField: UITextField) {
-        nombreLbl.text = "Hola " + textField.text!
+        saveBtn.enabled = nombreTxt.hasText()
     }
- */
     
+    func textFieldDidChange(textField: UITextField) {
+        saveBtn.enabled = nombreTxt.hasText()
+    }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) { dismissViewControllerAnimated(true, completion: nil)
     }

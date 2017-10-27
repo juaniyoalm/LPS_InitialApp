@@ -46,6 +46,7 @@ class AmigoTableViewController: UITableViewController {
         cell.nombre.text = amigos[indexPath.row].nombre
         cell.foto.image = amigos[indexPath.row].foto
         cell.evaluacion.gradoAfinidad = amigos[indexPath.row].gradoAfinidad
+        cell.accessoryType = .DisclosureIndicator
 
         return cell
     }
