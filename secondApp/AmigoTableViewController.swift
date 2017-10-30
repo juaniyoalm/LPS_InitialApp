@@ -15,11 +15,9 @@ class AmigoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let amigo1 = Amigo(nombre: "Darth Vader", foto: UIImage(named:"Darth")!, gAfinidad: 5)
-        let amigo2 = Amigo(nombre: "Alf", foto: UIImage(named:"Alf")!, gAfinidad: 3)
-        let amigo3 = Amigo(nombre: "Anonymous", foto: UIImage(named:"Anonymous")!, gAfinidad: 0)
+        navigationItem.leftBarButtonItem = editButtonItem()
+        cargarDatosEjemplo()
         
-        amigos += [amigo1!, amigo2!, amigo3!]
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,35 +50,68 @@ class AmigoTableViewController: UITableViewController {
     }
     
     // MARK: - Unwind segue desde AmigoViewController
-    @IBAction func addNuevoAmigo(sender: UIStoryboardSegue){
+    
+    @IBAction func actualizaLista(sender: UIStoryboardSegue){
         let sourceViewController = sender.sourceViewController as! AmigoViewController
-        let nuevoAmigo = sourceViewController.amigo
-        amigos.append(nuevoAmigo!)
+        
+        if let idFilaSeleccionada = tableView.indexPathForSelectedRow {
+            updateNuevoAmigo(sourceViewController.amigo!, idFila: idFilaSeleccionada)
+        }else{
+            addNuevoAmigo(sourceViewController.amigo!)
+        }
+    }
+    
+    func addNuevoAmigo(amigo: Amigo){
+        amigos.append(amigo)
         let newIndexPath = NSIndexPath(forRow: amigos.count-1, inSection: 0)
-        tableView.insertRowsAtIndexPaths([newIndexPath],    withRowAnimation: .Bottom)
+        tableView.insertRowsAtIndexPaths([newIndexPath],withRowAnimation: .Bottom)
+    }
+    
+    func updateNuevoAmigo(amigo: Amigo, idFila: NSIndexPath){
+        amigos[idFila.row] = amigo
+        tableView.reloadRowsAtIndexPaths([idFila], withRowAnimation: .Fade)
+    }
+    
+    func cargarDatosEjemplo() {
+        
+        let amigo1 = Amigo(nombre: "Darth Vader", foto: UIImage(named:"Darth")!, gAfinidad: 5)
+        let amigo2 = Amigo(nombre: "Alf", foto: UIImage(named:"Alf")!, gAfinidad: 3)
+        let amigo3 = Amigo(nombre: "Anonymous", foto: UIImage(named:"Anonymous")!, gAfinidad: 0)
+        
+        amigos += [amigo1!, amigo2!, amigo3!]
+    }
+
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier != "mostrarDetalle" {return}
+        
+        let celdaRef = sender as! AmigoTableViewCell
+        
+        let destinoVC = segue.destinationViewController as! AmigoViewController
+        
+        let filaSeleccionada = tableView.indexPathForCell(celdaRef)
+        
+        destinoVC.amigo = amigos[(filaSeleccionada?.row)!]
     }
 
  
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+                            forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle != .Delete {return}
+        amigos.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    }
 
-    /*
+
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
 
     /*
     // Override to support rearranging the table view.

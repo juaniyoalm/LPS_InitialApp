@@ -14,11 +14,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AmigoTableViewCell" rowHeight="90" id="9si-bO-HUP" customClass="AmigoTableViewCell" customModule="secondApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AmigoTableViewCell" rowHeight="90" id="9si-bO-HUP" customClass="AmigoTableViewCell" customModule="secondApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9si-bO-HUP" id="eiM-54-dSU">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Imagen predeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="Hr9-4y-B6k">
@@ -40,6 +40,7 @@
                                     <outlet property="evaluacion" destination="14k-KC-2td" id="sB7-QA-hoX"/>
                                     <outlet property="foto" destination="Hr9-4y-B6k" id="nAF-vY-qRB"/>
                                     <outlet property="nombre" destination="srz-08-AEy" id="QjD-3s-Fam"/>
+                                    <segue destination="BYZ-38-t0r" kind="push" identifier="mostrarDetalle" id="7fY-Fd-phO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -101,7 +102,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="gPg-Lo-Phu">
                             <connections>
-                                <segue destination="J9L-zT-fkF" kind="unwind" unwindAction="addNuevoAmigo:" id="fVq-pi-XmL"/>
+                                <segue destination="J9L-zT-fkF" kind="unwind" unwindAction="actualizaLista:" id="lH2-BT-X6p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -156,10 +157,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1W-fF-Df5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677" y="103"/>
+            <point key="canvasLocation" x="667" y="-439"/>
         </scene>
     </scenes>
     <resources>
         <image name="Imagen predeterminada" width="540" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7fY-Fd-phO"/>
+    </inferredMetricsTieBreakers>
 </document>

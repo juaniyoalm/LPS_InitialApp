@@ -26,8 +26,15 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         nombreTxt.delegate = self;
-        saveBtn.enabled = false
         nombreTxt.addTarget(self, action: #selector(self.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
+        
+        if (amigo === nil){
+            saveBtn.enabled = false
+        }else{
+            nombreTxt.text = amigo!.nombre
+            imgView.image = amigo!.foto
+            controlEvaluacion.gradoAfinidad = amigo!.gradoAfinidad
+        }
     }
  
     
@@ -40,7 +47,11 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
     //MARK: Navegacion
     
     @IBAction func cancelar(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        if presentingViewController is UINavigationController{
+            dismissViewControllerAnimated(true, completion: nil)
+        }else{
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
 
     // MARK: Actions
