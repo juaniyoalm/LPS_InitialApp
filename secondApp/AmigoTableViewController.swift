@@ -10,13 +10,16 @@ import UIKit
 
 class AmigoTableViewController: UITableViewController {
     
-    var amigos = [Amigo]()
+    var amigos = [Amigo](){
+        didSet{
+        guardarDatos() }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        cargarDatos()
         navigationItem.leftBarButtonItem = editButtonItem()
-        cargarDatosEjemplo()
+        //cargarDatosEjemplo()
         
     }
 
@@ -110,6 +113,21 @@ class AmigoTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
+    }
+    
+    func cargarDatos(){
+        if let array = NSKeyedUnarchiver.unarchiveObjectWithFile (Amigo.amigoURL.path!) as? [Amigo]{
+            self.amigos += array
+        }else{
+            cargarDatosEjemplo()
+        }
+    }
+    
+    func guardarDatos(){
+        let exito = NSKeyedArchiver.archiveRootObject(self.amigos,toFile: Amigo.amigoURL.path!)
+        if !exito{
+            print("error en la carga del archivo...")
+        }
     }
 
 
