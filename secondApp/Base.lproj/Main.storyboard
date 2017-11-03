@@ -21,9 +21,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Imagen predeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="Hr9-4y-B6k">
-                                            <rect key="frame" x="8" y="9" width="89" height="72.5"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srz-08-AEy">
                                             <rect key="frame" x="114" y="8" width="137" height="19"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -34,6 +31,9 @@
                                             <rect key="frame" x="105" y="42" width="160" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Imagen predeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="Hr9-4y-B6k">
+                                            <rect key="frame" x="8" y="8" width="72" height="72"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -95,14 +95,14 @@
                         </accessibility>
                     </view>
                     <navigationItem key="navigationItem" title="Nuevo Amigo" id="sUG-vB-Dbn">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Klg-8R-U8T">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="Klg-8R-U8T">
                             <connections>
                                 <action selector="cancelar:" destination="BYZ-38-t0r" id="Ugg-iF-KjM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gPg-Lo-Phu">
+                        <barButtonItem key="rightBarButtonItem" title="Guardar" id="gPg-Lo-Phu">
                             <connections>
-                                <segue destination="J9L-zT-fkF" kind="unwind" unwindAction="actualizaLista:" id="lH2-BT-X6p"/>
+                                <segue destination="J9L-zT-fkF" kind="unwind" identifier="" unwindAction="actualizaLista:" id="lH2-BT-X6p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -30,10 +30,12 @@ class AmigoViewController: UIViewController, UITextFieldDelegate, UIImagePickerC
         
         if (amigo === nil){
             saveBtn.enabled = false
+            navigationItem.title = "Nuevo Amigo"
         }else{
             nombreTxt.text = amigo!.nombre
             imgView.image = amigo!.foto
             controlEvaluacion.gradoAfinidad = amigo!.gradoAfinidad
+            navigationItem.title = "Editar Amigo"
         }
     }
  

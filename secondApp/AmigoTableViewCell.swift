@@ -19,7 +19,12 @@ class AmigoTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // FOTOS CIRCULARES
+        foto.layer.cornerRadius = foto.frame.size.width / 2
+        foto.clipsToBounds = true
+        foto.layer.borderWidth = 1.0
+        foto.layer.borderColor = UIColor.redColor().CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

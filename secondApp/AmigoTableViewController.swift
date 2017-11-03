@@ -19,8 +19,7 @@ class AmigoTableViewController: UITableViewController {
         super.viewDidLoad()
         cargarDatos()
         navigationItem.leftBarButtonItem = editButtonItem()
-        //cargarDatosEjemplo()
-        
+        self.navigationItem.leftBarButtonItem!.title = "Editar"
     }
 
     override func didReceiveMemoryWarning() {
@@ -127,6 +126,18 @@ class AmigoTableViewController: UITableViewController {
         let exito = NSKeyedArchiver.archiveRootObject(self.amigos,toFile: Amigo.amigoURL.path!)
         if !exito{
             print("error en la carga del archivo...")
+        }
+    }
+    
+    override func setEditing (editing:Bool, animated:Bool)
+    {
+        super.setEditing(editing,animated:animated)
+        if(self.editing)
+        {
+            self.editButtonItem().title = "Ok"
+        }else
+        {
+            self.editButtonItem().title = "Editar"
         }
     }
 
